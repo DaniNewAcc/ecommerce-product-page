@@ -395,7 +395,7 @@
     opacity: 0.7;
   }
 
-  .img-wrapper a:focus, .btn-minus:focus, .btn-plus:focus, .btn-cart:focus {
+  .img-wrapper a:focus, .btn-minus:focus, .btn-plus:focus {
     border: none;
     outline: 0;
     opacity: 0.7;

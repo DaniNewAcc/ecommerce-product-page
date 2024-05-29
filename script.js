@@ -79,6 +79,20 @@ cart.addEventListener('click', () => {
 })
 
 
+// Close dropdown cart 
+
+image.addEventListener('click', () => {
+    dropdown.classList.add('hidden');
+})
+
+window.addEventListener('click', (e) => {
+    if (!cart.contains(e.target) && !deleteBtn.contains(e.target)) {
+        dropdown.classList.add('hidden');
+        cart.classList.remove('cart-hover');
+    }
+})
+
+
 plusBtn.addEventListener('click', () => { incrementQuantity() })
 minusBtn.addEventListener('click', () => { decrementQuantity() })
 
@@ -226,11 +240,13 @@ openBtn.addEventListener('click', () => {
 // Close Sidebar 
 
 const closeSidebar = () => {
-    sidebar.classList.remove('open');
-    sidebarLinks.style.display = 'none';
-    openBtn.classList.remove('hidden');
-    closeMenuBtn.classList.add('hidden');
-    overlay.classList.add('hidden');
+    if (window.innerWidth < 768) {
+        sidebar.classList.remove('open');
+        sidebarLinks.style.display = 'none';
+        openBtn.classList.remove('hidden');
+        closeMenuBtn.classList.add('hidden');
+        overlay.classList.add('hidden');
+    }
 }
 
 closeMenuBtn.addEventListener('click', () => {
